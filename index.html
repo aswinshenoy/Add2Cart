@@ -1,0 +1,89 @@
+<html>
+	<title>Flipzon | Online Shopping </title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<body>
+	<div class="modal fade" id="mycart" tabindex="-1" role="dialog" aria-labelledby="mycart" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-shopping-cart pr-2"></i>My Cart</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div id="cart-content" class="modal-body">
+		  </div>
+		</div>
+	  </div>
+	</div>
+		
+	<div id="header" class="row m-0 px-2 bg-primary p-2">
+		<div class="col-md-3">
+			<img class="pt-2 text-center" src="img/logo.png" style="width: 6rem">
+		</div>
+		<div class="col-md-9 text-right">
+			<div class="btn btn-outline-light" data-toggle="modal" data-target="#mycart"><i class="fa fa-shopping-cart"></i> My Cart</div>
+			<div class="btn btn-outline-light"><i class="fa fa-user pr-1"></i>Account</div>
+		</div>
+	</div>
+	<div id="products" class="row m-0 p-2">
+		
+		<div class="col-md-3">
+			<div id="s7edge" class="card p-2">
+				<div class="text-center">
+					<img class="card-img-top text-center" src="img/s7edge.jpeg" style="width: 80%">
+					<div id="s7edge-product-title" class="card-title text-primary text-uppercase pt-2 mb-0" style="font-weight: 900;">Samsung Galaxy S7 Edge</div>
+					<div  id="s7edge-product-price" style="font-weight: 600">$300</div>
+				</div>
+				
+					<ul>
+						<li>5.5"inch 2K SuperAMEOLED Display</li>
+						<li>12 MP Dual Pixel Camera</li>
+						<li>IP68X Water Resistance</li>
+					</ul>
+					<div class="btn btn-primary btn-large m-2 add-to-cart"><i class="fa fa-cart-plus pr-2"></i>Add to Cart</div>
+			</div>
+		</div>
+		
+		<div class="col-md-3">
+			<div id="iphonex" class="card p-2">
+				<div class="text-center">
+					<img class="card-img-top text-center" src="img/iphonex.jpeg" style="width: 40%">
+					<div id="iphonex-product-title" class="card-title text-primary text-uppercase pt-2 mb-0" style="font-weight: 900;">Apple iPhone X</div>
+					<div  id="iphonex-product-price" style="font-weight: 600">$1000</div>
+				</div>
+				
+					<ul>
+						<li>5.5"inch Retina Display</li>
+						<li>12 MP Dual Camera</li>
+						<li>IP68X Water Resistance</li>
+					</ul>
+					<div class="btn btn-primary btn-large m-2 add-to-cart"><i class="fa fa-cart-plus pr-2"></i>Add to Cart</div>
+			</div>
+		</div>
+		
+
+	</div>
+	<script>
+		$(document).ready(function(){
+			
+			$(".add-to-cart").click(function(){
+				$(this).hide();
+				var parent = $(this).parent().attr("id");
+				var title = $("#"+parent+"-product-title").text();
+				var price = $("#"+parent+"-product-price").text();
+				$("#cart-content").append(title + " - " + price + '</i></div><br>');
+			});
+				
+		});
+		
+		
+			
+	</script>
+</body>
+</html>
